@@ -1,1 +1,160 @@
 /* You can add global styles to this file, and also import other style files */
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+.video-audio-dialog {
+    padding: 0px;
+    .incoming-call {
+        background-color: #242e3a;
+        height: 290px;
+        .recruiter-image {
+            img {
+                height: 60px;
+                width: 60px;
+                border-radius: 50%;
+            }
+            text-align: center;
+            padding-top: 20px;
+        }
+        p {
+            text-align: center;
+            padding-top: 25px !important;
+            padding-bottom: 15px !important;
+            margin: 0px;
+            color: white;
+            font-size: 20px;
+        }
+        .call-icons {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            padding-top: 45px;
+            padding-bottom: 10px;
+            div {
+                width: 50%;
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                span {
+                    border-radius: 50%;
+                    width: 40px;
+                    height: 40px;
+                    border: solid 0.5px transparent;
+                    cursor: pointer;
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: center;
+                    align-items: center;
+                }
+            }
+            .accept {
+                color: green;
+            }
+            .reject {
+                color: red;
+            }
+        }
+        .inner-glow-answer {
+            background: transparent;
+            box-shadow: 0 0 20px 5px rgba(0, 255, 20, 0.69),
+                inset 0 0 20px 7px rgba(0, 255, 20, -0.31);
+        }
+        .inner-glow-reject {
+            background: transparent;
+            box-shadow: 0 0 20px 5px rgba(240, 47, 47, 2.69),
+                inset 0 0 20px 7px rgba(0, 255, 20, -0.31);
+        }
+    }
+    .vedio-container {
+        // background-image: url("assets/images/avatars/profile.jpg");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 450px;
+        width: 600px;
+        position: relative;
+        .vedio-tag-self {
+            display: block;
+            height: 450px;
+            width: 600px;
+        }
+        .vedio-tag-guest {
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            height: 150px;
+            z-index: 2000;
+        }
+    }
+    video::-webkit-media-controls-enclosure {
+        display: none !important;
+    }
+    .mat-dialog-container {
+        padding: 0px !important;
+        margin: 0px !important;
+    }
+
+    .mat-dialog-content {
+        margin: 0 !important;
+        padding: 0 !important;
+        max-height: 100% !important;
+        position: relative;
+    }
+
+    .video-controlls {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        width: 100%;
+        z-index: 999;
+        bottom: 0px;
+        padding: 15px;
+        background-color: rgba(0, 0, 0, 0.2);
+
+        span {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            flex: 0 0 auto;
+            width: 40px;
+            height: 40px;
+            border: #dddd solid 1px;
+            border-radius: 50%;
+            cursor: pointer;
+            margin: 0px 8px;
+
+            i {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                flex: 0 0 auto;
+                color: #fff;
+                width: 16px !important;
+                height: 16px !important;
+                font-size: 16px;
+            }
+
+            &:hover {
+                border-color: #97bfff;
+
+                i {
+                    color: #97bfff;
+                }
+            }
+            .disabled-color {
+                color: grey !important;
+            }
+            .muted-color {
+                color: red !important;
+            }
+            .muted-color span {
+                border: #dddd solid 1px !important;
+            }
+        }
+    }
+}

@@ -1,0 +1,31 @@
+<p>
+  Select a person from the list (eg: ssh) and click on the link 'click here', which loads
+  http://localhost:4200/incoming-call/ssh
+</p>
+<p>Now click on button 'call' in first tab</p>
+
+<mat-form-field>
+  <mat-label> Choose person</mat-label>
+  <mat-select (selectionChange)="setSocket($event)">
+    <mat-option *ngFor="let person of persons" [value]="person.value">
+      {{ person.viewValue }}
+    </mat-option>
+  </mat-select>
+</mat-form-field>
+<div *ngIf="selectedPerson">
+  <p>Load url client url</p>
+
+  <a
+    [routerLink]="['/incoming-call', selectedPerson]"
+    preserveQueryParams
+    preserveFragment
+    target="_blank"
+  >
+    click here
+  </a>
+</div>
+<div style="padding-top:20px;">
+  <button mat-raised-button color="primary" [disabled]="!selectedPerson" (click)="openD()">
+    call
+  </button>
+</div>

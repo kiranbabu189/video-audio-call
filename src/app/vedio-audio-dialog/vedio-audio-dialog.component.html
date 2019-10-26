@@ -1,0 +1,58 @@
+<div
+  mat-dialog-content
+  [ngClass]="{ 'vedio-container': true, 'full-screen-mode': isFullScreen }"
+>
+  <!-- poster="assets/images/avatars/profile.jpg"
+poster="assets/images/avatars/profile.jpg" -->
+  <video
+    #videoElementSelf
+    muted
+    autoplay
+    [class]="videoCallAccepted ? 'vedio-tag-guest' : 'vedio-tag-self'"
+  ></video>
+  <video
+    #videoElementGuest
+    autoplay
+    [ngClass]="{
+      'vedio-tag-self': videoCallAccepted && !isFullScreen,
+      'vedio-tag-guest': !videoCallAccepted,
+      'video-full-screen-mode': isFullScreen
+    }"
+  ></video>
+  <div class="video-controlls">
+    <span>
+      <mat-icon (click)="closeVideoAudioDialog()" style="color:white;">
+        call_end</mat-icon
+      >
+    </span>
+    <!--<span><i class="fas fa-microphone-slash"></i></span>-->
+    <span [class]="isAudioMuted ? 'muted-color' : ''"
+      ><i
+        [class]="
+          isAudioMuted
+            ? 'fa fa-microphone-slash muted-color'
+            : 'fas fa-microphone'
+        "
+        (click)="controlStreams('audio')"
+      ></i
+    ></span>
+    <!--<span> <i class="fas fa-video-slash" ></i> </span>-->
+    <span>
+      <i
+        [class]="
+          isCamDisabled ? 'fas fa-video-slash muted-color' : 'fas fa-video'
+        "
+        (click)="controlStreams('video')"
+      ></i
+    ></span>
+    <span *ngIf="videoCallAccepted">
+      <mat-icon style="color:white;" (click)="fullscreen()"
+        >fullscreen</mat-icon
+      >
+    </span>
+
+    <!-- <span>
+            <i class="fas fa-times"></i>
+        </span> -->
+  </div>
+</div>

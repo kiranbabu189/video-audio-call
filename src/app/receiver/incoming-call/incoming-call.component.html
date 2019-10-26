@@ -1,0 +1,19 @@
+<div class="incoming-call">
+    <div class="recruiter-image">
+    </div>
+    <p>
+        Incoming call ...
+    </p>
+    <div class="call-icons">
+        <div class="accept">
+            <span class="inner-glow-answer">
+                <mat-icon (click)="acceptRejectCall(true)"> call</mat-icon>
+            </span>
+        </div>
+        <div class="reject">
+            <span class="inner-glow-reject">
+                <mat-icon (click)="acceptRejectCall(false)"> call_end</mat-icon>
+            </span>
+        </div>
+    </div>
+</div>
