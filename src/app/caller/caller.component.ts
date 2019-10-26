@@ -18,10 +18,10 @@ export class CallerComponent {
   dialogRef: any;
   selectedPerson: string = '';
   persons: any = [
-    { value: "sudo", viewValue: "sudo" },
-    { value: "ssh", viewValue: "ssh" },
-    { value: "vscode", viewValue: "vscode" },
-    { value: "postman", viewValue: "postman" }
+    { value: "Sam", viewValue: "Sam" },
+    { value: "Ram", viewValue: "Ram" },
+    { value: "Ron", viewValue: "Ron" },
+    { value: "Jack", viewValue: "Jack" }
   ];
   constructor(
     private dialog: MatDialog,
